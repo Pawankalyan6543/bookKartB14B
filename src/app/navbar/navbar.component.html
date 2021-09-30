@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <button mat-icon-button color="basic" routerLink="BookCart">
+        <mat-icon>book</mat-icon>BookCart
+    </button>
+
+    <form novalidate class="ng-untouched ng-pristine ng-valid">
+        <input  type="search" aria-label="search" placeholder="Search books or authors" (keyup)="onKey($event)"
+        class="mat-autocomplete-trigger searchbox ng-valid ng-dirty ng-touched" 
+        autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true">
+        <mat-autocomplete class="mat-autocomplete"></mat-autocomplete>
+      </form>
+
+      <!-- <app-product-filters></app-product-filters> -->
+
+    <div class="spacer"></div>
+    <button mat-icon-button color="white" routerLink="favorite">
+        <mat-icon matBadge="{{total}}" matBadgeColor="warn">favorite</mat-icon>
+    </button>
+    <button mat-icon-button color="white" routerLink="add_shopping_cart">
+        <mat-icon matBadge="{{total}}" matBadgeColor="warn">add_shopping_cart</mat-icon>
+      </button>
+    <button mat-button [matMenuTriggerFor]="menu">user</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="myOrders">myOrders</button>
+        <button mat-menu-item routerLink="Logout">Logout</button>
+    </mat-menu>
+    <!-- <button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>format_color_fill</mat-icon></button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item>deeppurple-amber</button>
+        <button mat-menu-item>indigo-pink</button>
+        <button mat-menu-item>pink-bluegrey</button>
+        <button mat-menu-item>purple-green</button>
+    </mat-menu> -->
+    <app-menu 
+      [options]="options$"
+      (themeChange)="themeChangeHandler($event)">
+    </app-menu>
+</mat-toolbar>

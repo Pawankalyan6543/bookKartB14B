@@ -1,0 +1,22 @@
+.spacer {
+    flex: 1 1 auto;
+}
+form {
+    display: block;
+    margin-left: 20em;
+}
+
+.searchbox {
+    border: none;
+    border-radius: 2px;
+    background-color: #fafafa;
+    padding: 5px 10px;
+    height: 50%;
+    width: 400px;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
